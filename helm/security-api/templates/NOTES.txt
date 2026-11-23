@@ -1,0 +1,9 @@
+security-api deployed as release "{{ .Release.Name }}" in namespace "{{ .Release.Namespace }}".
+
+Check pods:
+  kubectl get pods -n {{ .Release.Namespace }} -l app.kubernetes.io/instance={{ .Release.Name }}
+{{- if eq .Values.service.type "NodePort" }}
+
+Reach it locally (Kind maps host 8080 to NodePort {{ .Values.service.nodePort }}):
+  curl localhost:8080/health
+{{- end }}
