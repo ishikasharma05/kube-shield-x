@@ -1,5 +1,9 @@
 replicaCount: 3
 
+# Namespace the chart's resources are rendered into.
+# Setting it explicitly keeps scanners like Checkov from seeing "default".
+namespace: app
+
 image:
   repository: kubeshield/security-api
   tag: "0.1.0"
