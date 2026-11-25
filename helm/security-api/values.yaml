@@ -5,9 +5,9 @@ replicaCount: 3
 namespace: app
 
 image:
-  repository: kubeshield/security-api
-  tag: "0.1.0"
-  pullPolicy: IfNotPresent
+  repository: ghcr.io/ishikasharma05/security-api
+  digest: "sha256:15cb75bf40c2b1435565ecd0ffa2e51da6eb7d3a2ba03d75fb15cb9783b535df"
+  pullPolicy: Always
 
 serviceAccount:
   create: false
